@@ -1,11 +1,15 @@
 import axios from "axios";
-import type { TmdbResponse } from "../types/movie";
-
+import type { Movie } from "../types/movie";
 
 axios.defaults.baseURL = "https://api.themoviedb.org/3";
 axios.defaults.headers.common.Authorization = `Bearer ${import.meta.env.VITE_API_KEY}`;
 
-export async function fetchMovies(query: string, page: number ): Promise<TmdbResponse> {
+export interface TmdbResponse {
+	results: Movie[];
+	total_pages: number;
+}
+
+export async function fetchMovies(query: string, page: number): Promise<TmdbResponse> {
 	const q = query.trim();
 
 	try {

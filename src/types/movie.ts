@@ -6,7 +6,5 @@ export interface Movie {
 	overview: string;
 	release_date: string;
 	vote_average: number;
-	total_pages: number;
 }
 
-export interface TmdbResponse { results: Movie[]; total_pages: number };
