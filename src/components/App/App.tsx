@@ -53,8 +53,6 @@ export default function App() {
         }}
       />
 
-      {/* перший лоад */}
-      {isPending && <Loader />}
 
       {/* фоновий фетч (наприклад, при кліку на сторінку) */}
       {isFetching && !isPending && <Loader />}
